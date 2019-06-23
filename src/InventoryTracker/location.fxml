@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InventoryTracker.LocationController">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="321.0" prefWidth="316.0">
+         <children>
+            <ChoiceBox fx:id="locationBox" layoutX="83.0" layoutY="112.0" prefWidth="150.0" />
+            <Label layoutX="113.0" layoutY="47.0" text="Choose Location" />
+            <Button fx:id="locationButton" layoutX="113.0" layoutY="188.0" mnemonicParsing="false" onAction="#locationButtonListener" prefHeight="31.0" prefWidth="90.0" text="Continue" />
+         </children>
+      </Pane>
+   </children>
+</GridPane>
