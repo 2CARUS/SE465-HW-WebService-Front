@@ -21,3 +21,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/target/
+
+#REST api creds
+C:\Users\ckopp\Documents\docs\1-repos\SE465-HW-WebService-Front\src\main\java\com\se465\webservice\logic\REST_API
