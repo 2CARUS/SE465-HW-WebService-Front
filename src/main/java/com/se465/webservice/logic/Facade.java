@@ -50,12 +50,7 @@ public class Facade {
     private void displayResponse(String result) {
 
         // Format response nicely
-        result = result
-                .replace(',', '\n')
-                .replace('[', '\n')
-                .replace(']', '\n')
-                .replace('}', '\n')
-                .replace('{', '\n');
+        result = this.formatResult(result);
 
         System.out.format("%n%nResponse body from the previous GET HTTP request: %s", result);
 
@@ -64,6 +59,15 @@ public class Facade {
 
     public void currentFrame(UIFrame frame) {
         this.currentFrame = frame;
+    }
+
+    private String formatResult(String result) {
+        return result
+                .replace(',', '\n')
+                .replace('[', '\n')
+                .replace(']', '\n')
+                .replace('}', '\n')
+                .replace('{', '\n');
     }
 
     private static class FacadeHolder {
