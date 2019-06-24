@@ -1,6 +1,8 @@
 # SE465-HW-WebService-Front
 The Front end to the SE 465 WebService homework
 
+`SE rocks`
+
 
 > Written with [StackEdit](https://stackedit.io/).
 <!--stackedit_data:
