@@ -11,7 +11,8 @@ package com.se465.webservice.ui;
  */
 public class UIController {
 
-    private UIFrame mainUI;
+    private UIFrame mainFrame;
+    private UIFrame currentFrame;
 
     private UIController() {
     }
@@ -28,6 +29,7 @@ public class UIController {
      * @param nextFrame
      */
     public void displayNextFrame(UIFrame previousFrame, UIFrame nextFrame) {
+        this.currentFrame = nextFrame;
         previousFrame.conceal();
         nextFrame.render();
     }
@@ -38,14 +40,23 @@ public class UIController {
      * @param mainMenuUI
      */
     public void setMain(UIFrame mainMenuUI) {
-        this.mainUI = mainMenuUI;
+        this.mainFrame = mainMenuUI;
     }
 
     /**
      * Starts the UI at the mainUI frame
      */
     public void startUI() {
-        this.mainUI.render();
+        this.currentFrame = mainFrame;
+        this.mainFrame.render();
+    }
+
+    public void closeCurrentFrame() {
+        currentFrame.conceal();
+    }
+
+    public UIFrame getCurrentFrame() {
+        return currentFrame;
     }
 
     private static class UIControllerHolder {

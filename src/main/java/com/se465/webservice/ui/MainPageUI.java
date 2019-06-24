@@ -5,16 +5,19 @@
  */
 package com.se465.webservice.ui;
 
+import com.se465.webservice.logic.Facade;
+import com.se465.webservice.logic.LOCATION_CODES;
+
 /**
  *
  * @author ckopp
  */
-public class MainPage extends UIFrame {
+public class MainPageUI extends UIFrame {
 
     /**
      * Creates new form MainPage
      */
-    public MainPage() {
+    public MainPageUI() {
         initComponents();
     }
 
@@ -36,20 +39,28 @@ public class MainPage extends UIFrame {
         LookupStore_jButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("Form"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(400, 300));
 
         PageTitle_jLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         PageTitle_jLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PageTitle_jLabel.setText("STORE INVENTORY LOOKUP SERVICE");
+        PageTitle_jLabel.setName("PageTitle_jLabel"); // NOI18N
 
         CurrentLoginPrompt_jLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         CurrentLoginPrompt_jLabel.setText("Currently logged in as:");
+        CurrentLoginPrompt_jLabel.setName("CurrentLoginPrompt_jLabel"); // NOI18N
+
+        RoleContainer_jScrollPane.setName("RoleContainer_jScrollPane"); // NOI18N
 
         CurrentLogin_jTextPane.setEditable(false);
         CurrentLogin_jTextPane.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
         CurrentLogin_jTextPane.setText("Shopper");
+        CurrentLogin_jTextPane.setName("CurrentLogin_jTextPane"); // NOI18N
         RoleContainer_jScrollPane.setViewportView(CurrentLogin_jTextPane);
 
         CitySelector_jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*select a location*", "Minneapolis Location", "Saint Paul Location" }));
+        CitySelector_jComboBox.setName("CitySelector_jComboBox"); // NOI18N
         CitySelector_jComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CitySelector_jComboBoxActionPerformed(evt);
@@ -58,8 +69,10 @@ public class MainPage extends UIFrame {
 
         CityPrompt_jLabel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         CityPrompt_jLabel.setText("Please select a city:");
+        CityPrompt_jLabel.setName("CityPrompt_jLabel"); // NOI18N
 
         LookupStore_jButton.setText("Lookup");
+        LookupStore_jButton.setName("LookupStore_jButton"); // NOI18N
         LookupStore_jButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LookupStore_jButtonActionPerformed(evt);
@@ -116,7 +129,10 @@ public class MainPage extends UIFrame {
 
     private void LookupStore_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LookupStore_jButtonActionPerformed
         // TODO add your handling code here:
-//        System.out.println(this.CitySelector_jComboBox.getSelectedItem());
+        if (this.CitySelector_jComboBox.getSelectedIndex() != 0) {
+            Facade.getInstance().receiveCity((String) this.CitySelector_jComboBox.getSelectedItem());
+            this.conceal();
+        }
 
     }//GEN-LAST:event_LookupStore_jButtonActionPerformed
 
@@ -137,20 +153,21 @@ public class MainPage extends UIFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainPageUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainPageUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainPageUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainPageUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainPage().setVisible(true);
+                new MainPageUI().setVisible(true);
             }
         });
     }

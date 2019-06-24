@@ -9,8 +9,10 @@ package com.se465.webservice.logic;
  *
  * @author ckopp
  */
-public interface LOCATIONS {
+public interface LOGIC_CODES {
 
-    String MPLS = "Minneapolis Location";
-    String STPL = "Saint Paul Location";
+    int SUCCESS = 1;
+    int FAILURE = 0;
+    int ERROR = -1;
+
 }

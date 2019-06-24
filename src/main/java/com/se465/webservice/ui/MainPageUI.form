@@ -3,6 +3,10 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[400, 300]"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -10,7 +14,7 @@
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
-    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
     <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
     <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
@@ -80,6 +84,7 @@
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="STORE INVENTORY LOOKUP SERVICE"/>
+        <Property name="name" type="java.lang.String" value="PageTitle_jLabel" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="CurrentLoginPrompt_jLabel">
@@ -88,9 +93,13 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Currently logged in as:"/>
+        <Property name="name" type="java.lang.String" value="CurrentLoginPrompt_jLabel" noResource="true"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="RoleContainer_jScrollPane">
+      <Properties>
+        <Property name="name" type="java.lang.String" value="RoleContainer_jScrollPane" noResource="true"/>
+      </Properties>
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>
@@ -104,6 +113,7 @@
               <Font name="Tahoma" size="14" style="2"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Shopper"/>
+            <Property name="name" type="java.lang.String" value="CurrentLogin_jTextPane" noResource="true"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -117,6 +127,7 @@
             <StringItem index="2" value="Saint Paul Location"/>
           </StringArray>
         </Property>
+        <Property name="name" type="java.lang.String" value="CitySelector_jComboBox" noResource="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CitySelector_jComboBoxActionPerformed"/>
@@ -131,11 +142,13 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Please select a city:"/>
+        <Property name="name" type="java.lang.String" value="CityPrompt_jLabel" noResource="true"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="LookupStore_jButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Lookup"/>
+        <Property name="name" type="java.lang.String" value="LookupStore_jButton" noResource="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LookupStore_jButtonActionPerformed"/>
